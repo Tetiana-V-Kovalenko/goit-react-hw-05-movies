@@ -8,7 +8,7 @@ export const Reviews = () => {
   const [reviews, setReviews] = useState(null);
   useEffect(() => {
     getMovieReviews(id).then(setReviews);
-  });
+  }, [id]);
   return (
     <div>
       {reviews &&

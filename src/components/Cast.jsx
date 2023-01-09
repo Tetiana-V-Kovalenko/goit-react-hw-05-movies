@@ -6,9 +6,11 @@ export const Cast = () => {
   const { id } = useParams();
 
   const [cast, setCast] = useState(null);
+
   useEffect(() => {
     getMovieCast(id).then(setCast);
-  });
+  }, [id]);
+
   return (
     <div>
       {cast &&
