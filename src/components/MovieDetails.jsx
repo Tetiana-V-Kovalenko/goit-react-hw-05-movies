@@ -15,10 +15,11 @@ export const MovieDetails = () => {
       const movieDetails = await getMovieById(id);
       setMovie(movieDetails);
     };
+
     fetchMovie().catch(err => {
       console.log(err);
     });
-  }, []);
+  }, [id]);
 
   return (
     <div>
