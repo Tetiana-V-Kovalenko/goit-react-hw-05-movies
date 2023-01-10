@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 const MovieDetails = () => {
   const { id } = useParams();
   const location = useLocation();
-
+  const backLinkHref = location.state?.from ?? '/';
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <GoBackBtn url={location.state?.from ?? '/'} />
+      <GoBackBtn url={backLinkHref} />
       {movie && (
         <div className={css.movieContainer}>
           <img
@@ -46,12 +46,12 @@ const MovieDetails = () => {
           <ul>
             <h3>Additional information</h3>
             <li>
-              <Link to="cast" state={{ from: location.state.from }}>
+              <Link to="cast" state={{ from: backLinkHref }}>
                 Cast
               </Link>
             </li>
             <li>
-              <Link to="reviews" state={{ from: location.state.from }}>
+              <Link to="reviews" state={{ from: backLinkHref }}>
                 Reviews
               </Link>
             </li>
