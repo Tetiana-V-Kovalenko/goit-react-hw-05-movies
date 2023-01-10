@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSearchParams } from '../../node_modules/react-router-dom/dist/index';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 const Form = styled.form`
   padding: 15px;
 `;
-export const Movies = () => {
+const Movies = () => {
   const [searchedMovie, setSearchedMovie] = useState(null);
-  const [searchedParams, setSearchedParams] = useSearchParams();
+  const [searchedParams, setSearchedParams] = useSearchParams('');
   const query = searchedParams.get('query') ?? '';
   useEffect(() => {
     if (query === '') {
@@ -44,4 +45,9 @@ export const Movies = () => {
       </ul>
     </main>
   );
+};
+export default Movies;
+Movies.propTypes = {
+  searchedMovie: PropTypes.arrayOf(PropTypes.object),
+  searchedParams: PropTypes.string,
 };

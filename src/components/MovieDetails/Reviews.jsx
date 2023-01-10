@@ -1,8 +1,8 @@
 import { getMovieReviews } from 'MoviDbAPI/MovieDbApi';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-export const Reviews = () => {
+import PropTypes from 'prop-types';
+const Reviews = () => {
   const { id } = useParams();
 
   const [reviews, setReviews] = useState(null);
@@ -26,4 +26,9 @@ export const Reviews = () => {
         ))}
     </div>
   );
+};
+export default Reviews;
+Reviews.propTypes = {
+  state: PropTypes.object,
+  to: PropTypes.string,
 };

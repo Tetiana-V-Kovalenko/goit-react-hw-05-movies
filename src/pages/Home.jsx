@@ -1,10 +1,11 @@
 import { getTrendingMovies } from 'MoviDbAPI/MovieDbApi';
-
+import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
+
   useEffect(() => {
     getTrendingMovies().then(setTrendingMovies);
   }, []);
@@ -23,4 +24,11 @@ export const Home = () => {
       </ul>
     </main>
   );
+};
+export default Home;
+Home.propTypes = {
+  trendingMovies: PropTypes.arrayOf(PropTypes.object),
+};
+Link.propTypes = {
+  state: PropTypes.object,
 };

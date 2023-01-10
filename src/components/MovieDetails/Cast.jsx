@@ -1,8 +1,8 @@
 import { getMovieCast } from 'MoviDbAPI/MovieDbApi';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-export const Cast = () => {
+import PropTypes from 'prop-types';
+const Cast = () => {
   const { id } = useParams();
 
   const [cast, setCast] = useState(null);
@@ -33,4 +33,9 @@ export const Cast = () => {
         ))}
     </div>
   );
+};
+export default Cast;
+Cast.propTypes = {
+  state: PropTypes.object,
+  to: PropTypes.string,
 };
