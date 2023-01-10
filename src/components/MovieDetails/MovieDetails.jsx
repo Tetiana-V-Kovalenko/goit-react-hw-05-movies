@@ -26,7 +26,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <GoBackBtn url={location.state.from} />
+      <GoBackBtn url={location.state?.from ?? '/'} />
       {movie && (
         <div className={css.movieContainer}>
           <img
