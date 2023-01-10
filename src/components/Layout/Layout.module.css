@@ -1,0 +1,17 @@
+.header {
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 10px 5px 5px grey;
+}
+.navigation {
+}
+.navLink {
+  text-decoration: none;
+  padding: 0 10px;
+  color: black;
+  font-size: larger;
+}
+.navLink:hover,
+:focus {
+  color: brown;
+}

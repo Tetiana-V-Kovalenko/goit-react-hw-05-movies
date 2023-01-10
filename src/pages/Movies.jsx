@@ -1,9 +1,11 @@
 import { getSearchedMovies } from 'MoviDbAPI/MovieDbApi';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSearchParams } from '../../node_modules/react-router-dom/dist/index';
-
+import styled from 'styled-components';
+const Form = styled.form`
+  padding: 15px;
+`;
 export const Movies = () => {
   const [searchedMovie, setSearchedMovie] = useState(null);
   const [searchedParams, setSearchedParams] = useSearchParams();
@@ -21,7 +23,7 @@ export const Movies = () => {
 
   return (
     <main>
-      <form
+      <Form
         onSubmit={e => {
           e.preventDefault();
           onSubmitClick(e.target.elements.query.value);
@@ -29,7 +31,7 @@ export const Movies = () => {
       >
         <input type="text" name="query" />
         <button type="submit">Search</button>
-      </form>
+      </Form>
       <ul>
         {searchedMovie &&
           searchedMovie.map(movie => (

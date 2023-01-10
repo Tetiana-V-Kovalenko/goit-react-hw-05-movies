@@ -21,6 +21,7 @@ export const Cast = () => {
                 <img
                   src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
                   alt={actor.name}
+                  style={{ width: '15%' }}
                 />
                 <h4>{actor.name}</h4>
                 <p>{actor.character}</p>
