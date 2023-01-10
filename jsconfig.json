@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "src", 
-    "module": "es6",
-    "target": "es6",
-    "moduleResolution": "classic"
+    "baseUrl": "src"
   },
   "include": ["src"]
 }
